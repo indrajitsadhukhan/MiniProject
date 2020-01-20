@@ -11,7 +11,7 @@ class TrafficGenerator:
     def generate_routefile(self, seed):
         np.random.seed(seed)  # make tests reproducible
 
-        # the generation of cars is distributed according to a weibull distribution
+        # the generation of cars is distributed according to a poisson distribution
         timings = np.random.poisson(self._max_steps, self._n_cars_generated)
         timings = np.sort(timings)
 
